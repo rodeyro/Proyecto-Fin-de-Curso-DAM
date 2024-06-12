@@ -17,11 +17,10 @@ Este documento proporciona los pasos para descargar, transferir e instalar dos A
 
 ## 1. Descargar los APKs y JSON desde GitHub
 
-1. Ve a la sección [Releases](./releases) de este repositorio en GitHub.
-2. Descarga los archivos APK:
+1. Descarga los archivos APK:
    - `apk-debug del CreadorQR`
    - `apk-debug del LectorQR`
-3. Descarga el archivo JSON de configuración:
+2. Descarga el archivo JSON de configuración:
    - `firebase-config.json`
 
 ## 2. Configuración de Firebase
