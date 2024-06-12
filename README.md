@@ -10,19 +10,19 @@ Este documento proporciona los pasos para descargar, transferir e instalar dos A
 - Cables USB para conectar los dispositivos al ordenador.
 - [ADB (Android Debug Bridge)](https://developer.android.com/studio/command-line/adb) instalado (opcional para instalación manual).
 - Archivos APK disponibles en este repositorio:
-  - [`apk-debug del CreadorQR`](./path/to/apk-debug-del-CreadorQR.apk)
-  - [`apk-debug del LectorQR`](./path/to/apk-debug-del-LectorQR.apk)
+  - `apk-debug del CreadorQR`
+  - `apk-debug del LectorQR`
 - Archivo JSON de configuración para Firebase:
-  - [`firebase-config.json`](./path/to/firebase-config.json)
+  - `firebase-config.json`
 
 ## 1. Descargar los APKs y JSON desde GitHub
 
 1. Ve a la sección [Releases](./releases) de este repositorio en GitHub.
 2. Descarga los archivos APK:
-   - [`apk-debug del CreadorQR`](./path/to/apk-debug-del-CreadorQR.apk)
-   - [`apk-debug del LectorQR`](./path/to/apk-debug-del-LectorQR.apk)
+   - `apk-debug del CreadorQR`
+   - `apk-debug del LectorQR`
 3. Descarga el archivo JSON de configuración:
-   - [`firebase-config.json`](./path/to/firebase-config.json)
+   - `firebase-config.json`
 
 ## 2. Configuración de Firebase
 
