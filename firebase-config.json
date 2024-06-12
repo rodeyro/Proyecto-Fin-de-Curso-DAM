@@ -1,0 +1,57 @@
+{
+  "Asistencia": {
+    "12345678A": {
+      "faltas": 0,
+      "puntualidad": 0
+    },
+    "12345678B": {
+      "faltas": 0,
+      "puntualidad": 0
+    },
+    "12345678C": {
+      "faltas": 0,
+      "puntualidad": 0
+    },
+    "12345678D": {
+      "faltas": 0,
+      "puntualidad": 0
+    }
+  },
+  "Horario": {
+    "entrada": "8:00",
+    "salida": "17:00"
+  },
+  "RegistroEntradaSalida": {
+    
+  },
+  "Usuarios": {
+    "12345678A": {
+      "apellidos": "Pérez Gómez",
+      "dni": "12345678A",
+      "email": "juan@example.com",
+      "nombre": "Juan",
+      "password": "password123"
+    },
+    "12345678B": {
+      "apellidos": "Jurado Rodeyro",
+      "dni": "12345678B",
+      "email": "antonio@example.com",
+      "nombre": "Antonio",
+      "password": "password456"
+    },
+    "12345678C": {
+      "apellidos": "Piñeiro Lavandeira",
+      "dni": "12345678C",
+      "email": "alberto@example.com",
+      "nombre": "Alberto",
+      "password": "password789"
+    },
+    "12345678D": {
+      "apellidos": "Gomez Agustín",
+      "dni": "12345678D",
+      "email": "brais@example.com",
+      "nombre": "Brais",
+      "password": "password000"
+    }
+  }
+}
