@@ -6,7 +6,7 @@ Este documento proporciona los pasos para descargar, transferir e instalar dos A
 
 ## Requisitos
 
-- Dos dispositivos móviles con **depuración USB** habilitada.
+- Dos dispositivos móviles con [**depuración USB**](https://developer.android.com/codelabs/basic-android-kotlin-compose-connect-device?hl=es-419#0) habilitada.
 - Cables USB para conectar los dispositivos al ordenador.
 - [ADB (Android Debug Bridge)](https://developer.android.com/studio/command-line/adb) instalado (opcional para instalación manual).
 - Archivos APK disponibles en este repositorio:
