@@ -1,4 +1,4 @@
-## Manual de Instalación
+# Manual de Instalación
 
 ## Introducción
 
@@ -10,8 +10,8 @@ Este documento proporciona los pasos para descargar, transferir e instalar dos A
 - Cables USB para conectar los dispositivos al ordenador.
 - [ADB (Android Debug Bridge)](https://developer.android.com/studio/command-line/adb) instalado (opcional para instalación manual).
 - Archivos APK disponibles en este repositorio:
-  - [`app1-release.apk`](./path/to/app1-release.apk)
-  - [`app2-release.apk`](./path/to/app2-release.apk)
+  - [`apk-debug del CreadorQR`](./path/to/apk-debug-del-CreadorQR.apk)
+  - [`apk-debug del LectorQR`](./path/to/apk-debug-del-LectorQR.apk)
 - Archivo JSON de configuración para Firebase:
   - [`firebase-config.json`](./path/to/firebase-config.json)
 
@@ -19,8 +19,8 @@ Este documento proporciona los pasos para descargar, transferir e instalar dos A
 
 1. Ve a la sección [Releases](./releases) de este repositorio en GitHub.
 2. Descarga los archivos APK:
-   - [`app1-release.apk`](./path/to/app1-release.apk)
-   - [`app2-release.apk`](./path/to/app2-release.apk)
+   - [`apk-debug del CreadorQR`](./path/to/apk-debug-del-CreadorQR.apk)
+   - [`apk-debug del LectorQR`](./path/to/apk-debug-del-LectorQR.apk)
 3. Descarga el archivo JSON de configuración:
    - [`firebase-config.json`](./path/to/firebase-config.json)
 
@@ -54,11 +54,11 @@ Si los APKs están configurados para conectarse a una URL específica de Firebas
 ### Usando Conexión USB
 
 1. Conecta cada dispositivo móvil a tu ordenador utilizando cables USB.
-2. Copia `app1-release.apk` y `app2-release.apk` a la carpeta **Descargas** o cualquier otra carpeta accesible en los dispositivos.
+2. Copia `apk-debug del CreadorQR` y `apk-debug del LectorQR` a la carpeta **Descargas** o cualquier otra carpeta accesible en los dispositivos.
 
 ### Usando Almacenamiento en la Nube (Alternativa)
 
-1. Sube `app1-release.apk` y `app2-release.apk` a un servicio de almacenamiento en la nube (como Google Drive, Dropbox, etc.).
+1. Sube `apk-debug del CreadorQR` y `apk-debug del LectorQR` a un servicio de almacenamiento en la nube (como Google Drive, Dropbox, etc.).
 2. En los dispositivos móviles, abre el enlace a los archivos APK en tu navegador.
 3. Descarga los APKs en la carpeta **Descargas** o cualquier otra ubicación accesible.
 
@@ -67,7 +67,7 @@ Si los APKs están configurados para conectarse a una URL específica de Firebas
 ### Instalación Manual en los Dispositivos
 
 1. En cada dispositivo, navega hasta la carpeta donde se copiaron o descargaron los archivos APK.
-2. Toca en `app1-release.apk` para el primer dispositivo y en `app2-release.apk` para el segundo dispositivo.
+2. Toca en `apk-debug del CreadorQR` para el primer dispositivo y en `apk-debug del LectorQR` para el segundo dispositivo.
 3. Sigue las instrucciones en pantalla para completar la instalación.
 
 **Nota**: Es posible que necesites habilitar la instalación de aplicaciones de fuentes desconocidas en los dispositivos. Esto puede hacerse en **Configuración** > **Seguridad** > **Instalar aplicaciones desconocidas**.
@@ -81,18 +81,18 @@ Si prefieres usar `adb` para instalar los APKs:
 
 #### Instalación en el Primer Dispositivo
 
-3. Ejecuta el siguiente comando, reemplazando `<ID_dispositivo_1>` por el identificador del primer dispositivo y `app1-release.apk` por el nombre del archivo APK correspondiente:
+3. Ejecuta el siguiente comando, reemplazando `<ID_dispositivo_1>` por el identificador del primer dispositivo y `apk-debug del CreadorQR` por el nombre del archivo APK correspondiente:
 
     ```bash
-    adb -s <ID_dispositivo_1> install -r path/to/app1-release.apk
+    adb -s <ID_dispositivo_1> install -r path/to/apk-debug-del-CreadorQR.apk
     ```
 
 #### Instalación en el Segundo Dispositivo
 
-4. Ejecuta el siguiente comando, reemplazando `<ID_dispositivo_2>` por el identificador del segundo dispositivo y `app2-release.apk` por el nombre del archivo APK correspondiente:
+4. Ejecuta el siguiente comando, reemplazando `<ID_dispositivo_2>` por el identificador del segundo dispositivo y `apk-debug del LectorQR` por el nombre del archivo APK correspondiente:
 
     ```bash
-    adb -s <ID_dispositivo_2> install -r path/to/app2-release.apk
+    adb -s <ID_dispositivo_2> install -r path/to/apk-debug-del-LectorQR.apk
     ```
 
 ## 6. Ejecución de las Aplicaciones
