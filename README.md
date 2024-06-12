@@ -2,72 +2,60 @@
 
 ## Introducción
 
-Este documento proporciona los pasos para instalar y ejecutar dos APKs en dos dispositivos móviles diferentes utilizando Android Studio. Se asume que ya tienes los archivos APK listos en tu ordenador.
+Este documento proporciona los pasos para descargar, transferir e instalar dos APKs desde un repositorio de GitHub a dos dispositivos móviles diferentes.
 
 ## Requisitos
 
-- Android Studio instalado y configurado.
 - Dos dispositivos móviles con **depuración USB** habilitada.
 - Cables USB para conectar los dispositivos al ordenador.
-- Archivos APK proporcionados: `app1-release.apk` y `app2-release.apk`.
+- [ADB (Android Debug Bridge)](https://developer.android.com/studio/command-line/adb) instalado (opcional para instalación manual).
+- Archivos APK disponibles en este repositorio:
+  - [`app1-release.apk`](./path/to/app1-release.apk)
+  - [`app2-release.apk`](./path/to/app2-release.apk)
 
-## 1. Configuración Inicial
+## 1. Descargar los APKs desde GitHub
 
-### Habilitar la Depuración USB en los Dispositivos
+1. Ve a la sección [Releases](./releases) de este repositorio en GitHub.
+2. Descarga los archivos APK:
+   - [`app1-release.apk`](./path/to/app1-release.apk)
+   - [`app2-release.apk`](./path/to/app2-release.apk)
 
-1. Abre **Configuración** en cada dispositivo móvil.
-2. Ve a **Opciones de desarrollador**.
-3. Activa **Depuración USB**.
+## 2. Transferencia a los Dispositivos
 
-### Conectar los Dispositivos
+### Usando Conexión USB
 
-Conecta ambos dispositivos a tu ordenador utilizando cables USB.
+1. Conecta cada dispositivo móvil a tu ordenador utilizando cables USB.
+2. Copia `app1-release.apk` y `app2-release.apk` a la carpeta **Descargas** o cualquier otra carpeta accesible en los dispositivos.
 
-## 2. Verificación de Conexiones
+### Usando Almacenamiento en la Nube (Alternativa)
 
-### Comprobar la Conexión con `adb`
+1. Sube `app1-release.apk` y `app2-release.apk` a un servicio de almacenamiento en la nube (como Google Drive, Dropbox, etc.).
+2. En los dispositivos móviles, abre el enlace a los archivos APK en tu navegador.
+3. Descarga los APKs en la carpeta **Descargas** o cualquier otra ubicación accesible.
 
-1. Abre una terminal o el símbolo del sistema.
-2. Ejecuta el siguiente comando para listar los dispositivos conectados:
+## 3. Instalación de los APKs en los Dispositivos
 
-    ```bash
-    adb devices
-    ```
+### Instalación Manual en los Dispositivos
 
-Deberías ver una lista de dispositivos con sus identificadores. Asegúrate de que ambos dispositivos estén listados.
+1. En cada dispositivo, navega hasta la carpeta donde se copiaron o descargaron los archivos APK.
+2. Toca en `app1-release.apk` para el primer dispositivo y en `app2-release.apk` para el segundo dispositivo.
+3. Sigue las instrucciones en pantalla para completar la instalación.
 
-## 3. Instalar las APKs
+**Nota**: Es posible que necesites habilitar la instalación de aplicaciones de fuentes desconocidas en los dispositivos. Esto puede hacerse en **Configuración** > **Seguridad** > **Instalar aplicaciones desconocidas**.
 
-### Usando Android Studio
+### Usando `adb` (Opcional)
 
-1. Abre Android Studio.
-2. Ve a **View** > **Tool Windows** > **Device File Explorer**.
-3. Encuentra ambos dispositivos en la lista.
-
-#### Instalación en el Primer Dispositivo
-
-1. Selecciona el primer dispositivo en el desplegable de la barra de tareas.
-2. Arrastra y suelta `app1-release.apk` desde tu explorador de archivos a la ventana de **Device File Explorer**.
-3. O, usa la opción **Run** desde el menú de **Build** para instalar manualmente:
-    - Ve a **Build** > **Build APK(s)** y selecciona la opción para instalar el APK.
-
-#### Instalación en el Segundo Dispositivo
-
-1. Cambia al segundo dispositivo en el desplegable de la barra de tareas.
-2. Arrastra y suelta `app2-release.apk` a la ventana de **Device File Explorer**.
-3. O, instala manualmente usando **Build** > **Build APK(s)** y selecciona la opción para instalar el APK.
-
-### Usando la Línea de Comandos
+Si prefieres usar `adb` para instalar los APKs:
 
 1. Abre una terminal o el símbolo del sistema.
-2. Navega al directorio donde están almacenadas las APKs.
+2. Navega al directorio donde están almacenadas las APKs descargadas.
 
 #### Instalación en el Primer Dispositivo
 
 3. Ejecuta el siguiente comando, reemplazando `<ID_dispositivo_1>` por el identificador del primer dispositivo y `app1-release.apk` por el nombre del archivo APK correspondiente:
 
     ```bash
-    adb -s <ID_dispositivo_1> install -r app1-release.apk
+    adb -s <ID_dispositivo_1> install -r path/to/app1-release.apk
     ```
 
 #### Instalación en el Segundo Dispositivo
@@ -75,7 +63,7 @@ Deberías ver una lista de dispositivos con sus identificadores. Asegúrate de q
 4. Ejecuta el siguiente comando, reemplazando `<ID_dispositivo_2>` por el identificador del segundo dispositivo y `app2-release.apk` por el nombre del archivo APK correspondiente:
 
     ```bash
-    adb -s <ID_dispositivo_2> install -r app2-release.apk
+    adb -s <ID_dispositivo_2> install -r path/to/app2-release.apk
     ```
 
 ## 4. Ejecución de las Aplicaciones
@@ -88,8 +76,8 @@ Deberías ver una lista de dispositivos con sus identificadores. Asegúrate de q
 
 Si encuentras problemas al instalar o ejecutar las APKs:
 
-- Verifica que la depuración USB esté habilitada en ambos dispositivos.
-- Asegúrate de que los IDs de los dispositivos sean correctos en el comando `adb`.
+- Verifica que la instalación de aplicaciones de fuentes desconocidas esté permitida.
+- Asegúrate de que los IDs de los dispositivos sean correctos en el comando `adb` si usas esta herramienta.
 - Si la instalación falla, intenta desinstalar cualquier versión anterior de la aplicación en los dispositivos y vuelve a intentar.
 - Consulta los logs de `adb` con:
 
