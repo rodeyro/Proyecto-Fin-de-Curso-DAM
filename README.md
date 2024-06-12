@@ -1,4 +1,4 @@
-#  Manual de Instalación
+# Manual de Instalación
 
 ## Cómo ejecutar dos APKs en diferentes móviles desde Android Studio
 
@@ -107,4 +107,4 @@ Si encuentras problemas o tienes sugerencias, por favor abre un issue o una pull
 
 ## Licencia
 
-Este proyecto está licenciado bajo la [Licencia MIT](LICENSE).
+Este proyecto está licenciado bajo la [Licencia MIT](https://es.wikipedia.org/wiki/Licencia_MIT).
