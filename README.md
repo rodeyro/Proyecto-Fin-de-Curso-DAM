@@ -1,105 +1,101 @@
-# Manual de Instalación
+# Instrucciones para Instalar y Ejecutar dos APKs en Diferentes Móviles
 
-## Cómo ejecutar dos APKs en diferentes móviles desde Android Studio
+## Introducción
 
-### Requisitos Previos
+Este documento proporciona los pasos para instalar y ejecutar dos APKs en dos dispositivos móviles diferentes utilizando Android Studio. Se asume que ya tienes los archivos APK listos en tu ordenador.
 
-- Android Studio instalado.
-- Proyecto de Android configurado.
-- Dos dispositivos móviles o emuladores.
+## Requisitos
 
-### 1. Configuración Inicial
+- Android Studio instalado y configurado.
+- Dos dispositivos móviles con **depuración USB** habilitada.
+- Cables USB para conectar los dispositivos al ordenador.
+- Archivos APK proporcionados: `app1-release.apk` y `app2-release.apk`.
 
-Asegúrate de que cada dispositivo móvil tenga habilitada la **depuración USB**:
+## 1. Configuración Inicial
 
-1. Abre **Configuración** en el dispositivo.
+### Habilitar la Depuración USB en los Dispositivos
+
+1. Abre **Configuración** en cada dispositivo móvil.
 2. Ve a **Opciones de desarrollador**.
 3. Activa **Depuración USB**.
 
-Conecta ambos dispositivos a tu computadora mediante USB.
+### Conectar los Dispositivos
 
-### 2. Configuración del Proyecto
+Conecta ambos dispositivos a tu ordenador utilizando cables USB.
 
-#### Configuración del Variants Build
+## 2. Verificación de Conexiones
 
-Si necesitas generar dos APKs diferentes, puedes configurar variantes de build.
+### Comprobar la Conexión con `adb`
 
-1. Abre el archivo `build.gradle` del módulo de la aplicación.
-2. Agrega configuraciones específicas para cada variante. Por ejemplo:
-
-    ```groovy
-    android {
-        ...
-        productFlavors {
-            flavor1 {
-                applicationId "com.example.app.flavor1"
-                versionName "1.0-flavor1"
-                ...
-            }
-            flavor2 {
-                applicationId "com.example.app.flavor2"
-                versionName "1.0-flavor2"
-                ...
-            }
-        }
-    }
-    ```
-
-### 3. Generar APKs
-
-1. Selecciona la variante de build que deseas construir para el primer móvil desde la barra de tareas de Android Studio.
-2. Construye el APK:
-    - Ve a **Build** > **Build Bundle(s) / APK(s)** > **Build APK(s)**.
-    - Encuentra el APK generado en el directorio `app/build/outputs/apk/flavor1/`.
-
-3. Repite el proceso para la segunda variante y encuentra el APK en `app/build/outputs/apk/flavor2/`.
-
-### 4. Firmar las APKs
-
-Antes de distribuir las APKs, deben estar firmadas.
-
-1. Ve a **Build** > **Generate Signed Bundle / APK**.
-2. Selecciona **APK** y sigue las instrucciones del asistente:
-    - Elige la variante de build (flavor1 o flavor2).
-    - Proporciona la clave de firma y la contraseña.
-    - Firma la APK.
-3. Guarda el APK firmado en una ubicación deseada.
-
-### 5. Instalar las APKs
-
-#### Usando Android Studio
-
-1. Conecta el primer dispositivo.
-2. Selecciona el dispositivo desde la lista desplegable de dispositivos conectados.
-3. Ejecuta la aplicación con la variante correspondiente.
-4. Repite el proceso para el segundo dispositivo.
-
-#### Usando la Línea de Comandos
-
-1. Abre un terminal.
-2. Navega al directorio donde se encuentra la APK firmada.
-3. Usa `adb` para instalar la APK:
+1. Abre una terminal o el símbolo del sistema.
+2. Ejecuta el siguiente comando para listar los dispositivos conectados:
 
     ```bash
-    adb -s <ID_dispositivo_1> install -r app-flavor1-release.apk
-    adb -s <ID_dispositivo_2> install -r app-flavor2-release.apk
+    adb devices
     ```
 
-    Donde `<ID_dispositivo_1>` y `<ID_dispositivo_2>` son los identificadores únicos de tus dispositivos, que puedes obtener con `adb devices`.
+Deberías ver una lista de dispositivos con sus identificadores. Asegúrate de que ambos dispositivos estén listados.
 
-### 6. Ejecución en Dispositivos
+## 3. Instalar las APKs
+
+### Usando Android Studio
+
+1. Abre Android Studio.
+2. Ve a **View** > **Tool Windows** > **Device File Explorer**.
+3. Encuentra ambos dispositivos en la lista.
+
+#### Instalación en el Primer Dispositivo
+
+1. Selecciona el primer dispositivo en el desplegable de la barra de tareas.
+2. Arrastra y suelta `app1-release.apk` desde tu explorador de archivos a la ventana de **Device File Explorer**.
+3. O, usa la opción **Run** desde el menú de **Build** para instalar manualmente:
+    - Ve a **Build** > **Build APK(s)** y selecciona la opción para instalar el APK.
+
+#### Instalación en el Segundo Dispositivo
+
+1. Cambia al segundo dispositivo en el desplegable de la barra de tareas.
+2. Arrastra y suelta `app2-release.apk` a la ventana de **Device File Explorer**.
+3. O, instala manualmente usando **Build** > **Build APK(s)** y selecciona la opción para instalar el APK.
+
+### Usando la Línea de Comandos
+
+1. Abre una terminal o el símbolo del sistema.
+2. Navega al directorio donde están almacenadas las APKs.
+
+#### Instalación en el Primer Dispositivo
+
+3. Ejecuta el siguiente comando, reemplazando `<ID_dispositivo_1>` por el identificador del primer dispositivo y `app1-release.apk` por el nombre del archivo APK correspondiente:
+
+    ```bash
+    adb -s <ID_dispositivo_1> install -r app1-release.apk
+    ```
+
+#### Instalación en el Segundo Dispositivo
+
+4. Ejecuta el siguiente comando, reemplazando `<ID_dispositivo_2>` por el identificador del segundo dispositivo y `app2-release.apk` por el nombre del archivo APK correspondiente:
+
+    ```bash
+    adb -s <ID_dispositivo_2> install -r app2-release.apk
+    ```
+
+## 4. Ejecución de las Aplicaciones
 
 - Desbloquea ambos dispositivos.
-- Encuentra la aplicación instalada (puede tener nombres o íconos diferentes según la configuración).
-- Lanza la aplicación.
+- Encuentra la aplicación instalada en cada dispositivo (puede tener nombres o íconos diferentes).
+- Toca para abrir la aplicación en cada dispositivo.
 
-### 7. Resolución de Problemas
+## 5. Resolución de Problemas
 
 Si encuentras problemas al instalar o ejecutar las APKs:
 
 - Verifica que la depuración USB esté habilitada en ambos dispositivos.
-- Asegúrate de que el ID del dispositivo esté correcto en el comando `adb`.
-- Consulta el log de Android Studio o `adb logcat` para errores detallados.
+- Asegúrate de que los IDs de los dispositivos sean correctos en el comando `adb`.
+- Si la instalación falla, intenta desinstalar cualquier versión anterior de la aplicación en los dispositivos y vuelve a intentar.
+- Consulta los logs de `adb` con:
+
+    ```bash
+    adb logcat
+    ```
 
 ## Contribuciones
 
