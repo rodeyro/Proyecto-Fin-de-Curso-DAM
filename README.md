@@ -1,4 +1,4 @@
-# Instrucciones para Instalar y Ejecutar dos APKs en Diferentes Móviles
+# Manual de Instalación
 
 ## Introducción
 
