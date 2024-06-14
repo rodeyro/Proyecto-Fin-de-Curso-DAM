@@ -106,7 +106,6 @@ Si encuentras problemas al instalar o ejecutar las APKs:
 
 - Verifica que la instalación de aplicaciones de fuentes desconocidas esté permitida.
 - Asegúrate de que los IDs de los dispositivos sean correctos en el comando `adb` si usas esta herramienta.
-- Si la instalación falla, intenta desinstalar cualquier versión anterior de la aplicación en los dispositivos y vuelve a intentar.
 - Consulta los logs de `adb` con:
 
     ```bash
@@ -118,11 +117,3 @@ Si encuentras problemas con la conexión a Firebase:
 - Asegúrate de que la URL de la base de datos esté correctamente configurada en las aplicaciones.
 - Verifica la configuración de permisos en Firebase para la base de datos.
 - Consulta la consola de Firebase para cualquier mensaje de error o advertencia.
-
-## Contribuciones
-
-Si encuentras problemas o tienes sugerencias, por favor abre un issue o una pull request.
-
-## Licencia
-
-Este proyecto está licenciado bajo la [Licencia MIT](https://es.wikipedia.org/wiki/Licencia_MIT).
